@@ -30,6 +30,7 @@ public class GamesManager {
 			"hangryllama.HangryLlama",
 			"whereistheletter.WhereIsTheLetter",
 			"roulette.Roulette",
+			"hangman.Hangman",
 	};
 	
 	private List<Class<?>> randomGames;

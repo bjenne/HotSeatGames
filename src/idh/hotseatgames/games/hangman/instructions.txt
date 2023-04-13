@@ -1,0 +1,2 @@
+Type one letter at a time. Try to find the hidden word.
+You can't type more than one letter at a time.
