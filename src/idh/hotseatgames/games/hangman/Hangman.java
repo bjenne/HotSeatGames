@@ -13,6 +13,9 @@ public class Hangman implements IGame {
 	
 	@Override
 	public int startRound(String playerName) {
+		/**
+		 * Generate random word from text file
+		 */
 		String word;
 		int points = 10;
 		UserInput input = UserInput.instance();
@@ -24,6 +27,9 @@ public class Hangman implements IGame {
 		word = wordPool[rnd.nextInt(wordPool.length)];
 		char[] wordChars = word.toCharArray();
 		
+		/**
+		 * Create the empty/_ word to fill later
+		 */
 		char[] playerGuess = new char[word.length()];
 		
 		for (int i = 0; i < playerGuess.length; i++) {
@@ -33,6 +39,9 @@ public class Hangman implements IGame {
 		boolean wordIsGuessed = false;
 		int tries = 0;
 		
+		/**
+		 * Game Loop start
+		 */
 		while (!wordIsGuessed && tries != MAX_NUMBER_OF_GUESSES) {
 			System.out.print("Current guesses: ");
 			System.out.println(playerGuess);
@@ -40,12 +49,20 @@ public class Hangman implements IGame {
 			char guess = input.prompt("Enter your guess: ").toUpperCase().charAt(0);
 			tries++;
 
+			/**
+			 * Check if guessed character is in word
+			 * If so replace the the _ in the empty word by guessed character
+			 */
 			for (int i = 0; i < word.length(); i++) {
 				if (wordChars[i] == guess) {
 					playerGuess[i] = guess;
 				}
 			}
 			
+			/**
+			 * Check if the word is fully guessed
+			 * If so change the boolean wordIsGuessed to break the while loop
+			 */
 			if (isTheWordGuessed(playerGuess)) {
 				wordIsGuessed = true;
 				System.out.println("Congratulations. You guessed the word");
