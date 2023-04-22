@@ -22,6 +22,7 @@ public class GamesManager {
 	 */
 	private static final String GAMES_PACKAGE = "idh.hotseatgames.games";
 	private static final String[] GAMES_SUB_PATHS = {
+			"würfel.WürfelSpiel",
 			"hypertyper.HyperTyper",
 			"rockpaperscissors.RockPaperScissors",
 			"blackjack.BlackJack",
